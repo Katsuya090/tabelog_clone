@@ -7,11 +7,18 @@
   <span>物件情報</span>
   <table>
     <tbody>
+
       <tr>
         <td style="width: 25%;">建物名</td>
-        <td style="width: 75%;"><?= $house['House']['name'];?></td>
+        <td style="width: 25%;"><?= $house['House']['name'];?></td>
+        <td style="width: 25%">住所</td>
+        <td style="width: 25%"><?= $house['House']['addr'] ;?></td>
       </tr>
       <tr>
+      <td>写真</td>
+        <td rowspan="3">
+          <?=  $this->House->photoImage($house,['style' => 'width:100%']); ?>
+        </td>
         <td>住所</td>
         <td><?= $house['House']['addr'] ;?></td>
       </tr>

@@ -1,5 +1,5 @@
 <?php
-class House extends AppModel {
+class About extends AppModel {
 
    // 使用するビヘイビアの宣言
     public $actsAs = [

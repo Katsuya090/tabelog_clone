@@ -18,6 +18,17 @@ ALTER TABLE `shops` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 alter table shops add photo varchar(255) DEFAULT NULL;
 alter table shops add photo_dir varchar(255) DEFAULT NULL;
 
+-- usersテーブル作成
+create table `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL
+) ENGINE=InnnoDB;
+ALTER TABLE `users` ADD PRIMARY KEY (`id`);
+ALTER TABLE `users` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 -- テストレコード挿入
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ0", "000-999-9999", "東京都新宿区0丁目", "http://www0.shop.co.jp", now(), now());
 INSERT INTO `shops` (`name`, `tel`, `addr`, `url`, `created`, `updated`) VALUES ("ショップ1", "111-999-9999", "東京都新宿区1丁目", "http://www1.shop.co.jp", now(), now());

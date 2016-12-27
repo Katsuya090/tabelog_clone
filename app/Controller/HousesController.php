@@ -2,6 +2,8 @@
 
 class HousesController extends AppController {
 
+  public $helpers = ['House'];
+
   public $components = [
       'Paginator' => [
         'Limit' => 10,

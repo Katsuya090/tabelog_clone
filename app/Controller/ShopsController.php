@@ -11,6 +11,11 @@ class ShopsController extends AppController {
       ]
   ];
 
+  public function beforeFilter() {
+    parent::beforeFilter();
+
+    $this->Auth->allow('index', 'view');
+  }
 
   public function index(){
     // $this->set('shops', $this->Shop->find('all'));

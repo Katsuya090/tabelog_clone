@@ -1,34 +1,37 @@
 <h2>レストラン一覧</h2>
 
-<div style="text-align: right">
-    <span><?= $this->Html->link('新規登録', ['action' => 'add']); ?></span>
-</div>
-
-<table>
-    <tbody style="border: solid 1px #000">
+<?php if($currentUser) ; ?>
+    <div style="text-align: right">
+        <span><?= $this->Html->link('新規登録', ['action' => 'add']); ?></span>
+    </div>
+<?php endif; ?>
+<table style="border: solid 1px #000;>
+    <tbody>
     <?php foreach ($shops as $shop) : ?>
         <tr>
-            <td style="width: 10%">
+            <td style="width: 100px;">
                 <?= $this->Html->link(
                     $this->Shop->photoImage($shop, ['style' => 'width: 100%']),
                     ['action' => 'view', $shop['Shop']['id']],
                     ['escape' => false]
                 ); ?>
             </td>
-            <td style="width: 50%">
+            <td>
                 <?= $this->Html->link(
                     $shop['Shop']['name'],
                     ['action' => 'view', $shop['Shop']['id']]
-                    ); ?>
+                ); ?>
             </td>
-            <td style="width: 30%">
+            <td style="width: 20%">
                 登録日: <?= $this->Time->format($shop['Shop']['created'], '%Y/%m/%d'); ?>
             </td>
-            <td style="width: 5%">
-                <?= $this->Html->link(
-                    '編集',
-                    ['action' => 'edit', $shop['Shop']['id']]
-                    ); ?>
+
+            <?php if ($currentUser) ;?>
+                <td style="width: 5%">
+                    <?= $this->Html->link(
+                        '編集',
+                        ['action' => 'edit', $shop['Shop']['id']]
+                        ); ?>
             </td>
             <td style="width: 5%">
                 <?= $this->Form->postLink(
@@ -37,12 +40,13 @@
                     ['confirm' => '本当に削除してよろしいですか？']
                 ); ?>
             </td>
+        <?php endif; ?>
         </tr>
     <?php endforeach; ?>
     </tbody>
 </table>
 
-<div style="text-align: center ">
+<div style="text-align: center; ">
     <?= $this->Paginator->prev('< 前へ'); ?>&nbsp;
     <?= $this->Paginator->numbers(); ?>&nbsp;
     <?= $this->Paginator->next('次へ >'); ?>

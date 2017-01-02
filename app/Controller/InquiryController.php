@@ -1,9 +1,10 @@
 <?php
 
 class InquiryController extends AppController {
-
-    public function index() {
+    public $uses = ['House'];
+    public function index($houseId) {
       // $this->set('inquiries');
+      // var_dump($houseId);
 
       if ($this->request->is('post')){
         $this->Inquiry->create();

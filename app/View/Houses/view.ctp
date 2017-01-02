@@ -1,4 +1,4 @@
-<div style="width: 100%; height: 80%;">
+<div style="width: 100%; height: 80px;">
   <span style="float: left;"><h2><?= $house['House']['name']; ?></h2></span>
 
 </div>
@@ -7,6 +7,12 @@
   <span>物件情報</span>
   <table>
     <tbody>
+      <tr>
+
+            <td colspan="4">
+              <?=  $this->House->photoImage($house,['style' => 'width:300px']); ?>
+            </td>
+      </tr>
 
       <tr>
         <td style="width: 25%;">建物名</td>
@@ -15,10 +21,7 @@
         <td style="width: 25%"><?= $house['House']['addr'] ;?></td>
       </tr>
       <tr>
-      <td>写真</td>
-        <td rowspan="3">
-          <?=  $this->House->photoImage($house,['style' => 'width:100%']); ?>
-        </td>
+
         <td>住所</td>
         <td><?= $house['House']['addr'] ;?></td>
       </tr>
@@ -89,4 +92,9 @@
     </tbody>
   </table>
 
+
+  <?= $this->Html->link(
+                            'お問い合わせ',
+                            ['controller' => 'inquiry', 'action' => 'index', $house['House']['id']]
+                        ); ?>
 </div>

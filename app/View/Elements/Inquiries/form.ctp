@@ -1,4 +1,4 @@
-<?= $this->Form->create('inquiry'); ?>
+<?= $this->Form->create('Inquiry'); ?>
 <?= $this->Form->input('name', ['label' => 'お名前']); ?>
 <?= $this->Form->input('email', ['label' => 'メールアドレス']); ?>
 <?= $this->Form->input('tel', ['label' => '電話番号']); ?>

@@ -1,38 +1,14 @@
 <div id="navbar">
-  <ul>
-      <li><?= $this->Html->link('食べログクローン', '/'); ?></li>
-      <li>
-        <?= $this->Html->link(
-          'レストラン一覧',
-          ['controller' => 'shops', 'action' => 'index']
-        );?>
-      </li>
-      <li>
-        <?= $this->Html->link(
-          '事業案内',
-          ['controller' => 'business', 'action' => 'index']
-        );?>
-      </li>
-      <li>
-        <?= $this->Html->link(
-          '会社概要',
-          ['controller' => 'about', 'action' => 'index']
-        );?>
-      </li>
-      <li>
-        <?= $this->Html->link(
-          '物件一覧',
-          ['controller' => 'houses', 'action' => 'index']
-        );?>
-      </li>
-      <li>
-        <?= $this->Html->link(
-          'お問い合わせ',
-          ['controller' => 'inquiry', 'action' => 'index']
-        );?>
-      </li>
-  </ul>
-  <ul class="menu navbar-right">
+    <ul>
+        <li><?= $this->Html->link('食べログクローン', '/'); ?></li>
+        <li>
+            <?= $this->Html->link(
+                'レストラン一覧',
+                ['controller' => 'shops', 'action' => 'index']
+            ); ?>
+        </li>
+    </ul>
+    <ul class="menu navbar-right">
         <?php if ($currentUser) : ?>
             <li class="menu-li">
                 <a href="#" class="caret-down"><?= $currentUser['email'] ?></a>

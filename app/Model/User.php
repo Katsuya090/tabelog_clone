@@ -35,6 +35,16 @@ class User extends AppModel {
                 'message' => 'パスワード(確認)を入力してください'
             ],
         ],
+        'password_current' => [
+            'required' => [
+                'rule' => 'notBlank',
+                'message' => '現在のパスワードが入力されていません',
+            ],
+            'match' => [
+                'rule' => 'checkCurrentPassword',
+                'message' => '現在のパスワードが間違っています'
+            ]
+        ]
     ];
 
     // カスタムバリデーションメソッド
@@ -47,6 +57,26 @@ class User extends AppModel {
 
         return false;
     }
+
+    public function checkCurrentPassword($check) {
+
+        // 入力されたパスワード
+        $password = array_values($check)[0];
+
+        // 入力された id に対応するユーザーを取得
+        $user = $this->findById($this->data['User']['id']);
+
+        // 入力されたパスワード と ユーザーのパスワードが一致するかをチェック
+        $passwordHasher = new BlowfishPasswordHasher();
+
+        if ($passwordHasher->check($password, $user['User']['password'])) {
+            return true;
+        }
+
+        return false;
+
+    }
+
 
     public function beforeSave($options = []) {
 

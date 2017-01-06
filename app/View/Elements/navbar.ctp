@@ -1,6 +1,7 @@
 <div id="navbar">
+  <p>成城経営研究会</p>
   <ul>
-      <li><?= $this->Html->link('食べログクローン', '/'); ?></li>
+      <li><?= $this->Html->link('HOME', '/'); ?></li>
       <li>
         <?= $this->Html->link(
           'レストラン一覧',

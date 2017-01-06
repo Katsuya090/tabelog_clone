@@ -15,6 +15,13 @@ class Shop extends AppModel {
         ]
     ];
 
+    public $hasMany = [
+        'Review' => [
+            'className' => 'Review',
+            'dependent' => true //Shopが削除されたら Reviewも再帰的に削除する
+        ]
+    ];
+
     public $validate = [
         'name' => [
             'rule' => ['notBlank']

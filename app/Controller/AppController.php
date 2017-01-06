@@ -48,10 +48,10 @@ class AppController extends Controller {
             ],
             'authenticate' => [
                 'Form' => [
-                    // 'UserModel' => 'User', 認証に使うモデルを指定
+                    'UserModel' => 'User', //認証に使うモデルを指定
                     'fields' => [
                         'username' => 'email',
-                        // 'password' => 'password',  (デフォルト値と同じな為、省略可)
+                        'password' => 'password',  //(デフォルト値と同じな為、省略可)
                     ],
                     'passwordHasher' => 'Blowfish',  //パスワードがハッシュ化されている方式を指定
                 ]
@@ -65,6 +65,12 @@ class AppController extends Controller {
                 'action' => 'index'
             ],
             'authError' => 'ログインしてください',  //ログインが必要なページにアクセスしたときのメッセージ
+
+            // CSRF、マスアサイメント対策として Security コンポーネントを使用する
+            // CSRF対策:フォームにトークンが追加されるようになる
+            // マスアサイメント対策:フォーム改ざんチェックが行われる
+            'Security',
+
         ],
        ];
 }

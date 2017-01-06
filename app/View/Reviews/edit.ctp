@@ -9,13 +9,7 @@
 <?= $this->Form->input('score', [
     'label' => '点数',
     'type' => 'select',
-    'options' => [
-            1 => '★☆☆☆☆',
-            2 => '★★☆☆☆',
-            3 => '★★★☆☆',
-            4 => '★★★★☆',
-            5 => '★★★★★',
-        ]
+    'options' => $this->Shop->scoreList()
 ]); ?>
 
 <?= $this->Form->input('title', ['label' => 'タイトル']); ?>
@@ -23,3 +17,14 @@
 <?= $this->Form->hidden('id'); ?>
 <?= $this->Form->hidden('shop_id', ['value' => $shopId]); ?>
 <?= $this->Form->end($submitLabel); ?>
+
+<?php if ($this->request->data) : ?>
+    <div style="float: right; margin-right: 50px; margin-top: -55px; font-size: 18px;">
+    <?= $this->Form->postLink(
+        '削除',
+        ['action' => 'delete', $this->request->data['Review']['id']],
+        ['confirm' => '本当に削除してよろしいですか?']
+    ); ?>
+
+    </div>
+<?php endif; ?>

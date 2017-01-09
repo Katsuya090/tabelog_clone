@@ -1,3 +1,5 @@
+<p class="topicPath"><?= $this->Html->link('HOME', '/'); ?> &gt; 物件一覧</p>
+
 <h2>物件一覧</h2>
 
 <table>

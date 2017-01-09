@@ -2,7 +2,7 @@
 
 class InquiryController extends AppController {
     public $uses = ['House'];
-    public function index($houseId) {
+    public function index($houseId = null) {
       // $this->set('inquiries');
       // var_dump($houseId);
 

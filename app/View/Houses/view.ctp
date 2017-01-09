@@ -3,7 +3,7 @@
 
 </div>
 
-<div>
+<div id="house">
   <span>物件情報</span>
   <table>
     <tbody>
@@ -21,73 +21,52 @@
         <td style="width: 25%"><?= $house['House']['addr'] ;?></td>
       </tr>
       <tr>
-
-        <td>住所</td>
-        <td><?= $house['House']['addr'] ;?></td>
+        <td style="width: 25%;">交通</td>
+        <td style="width: 25%;"><?= $house['House']['traffic'] ;?></td>
+        <td style="width: 25%;">構造</td>
+        <td style="width: 25%;"><?= $house['House']['construction'] ;?></td>
       </tr>
       <tr>
-        <td>交通</td>
-        <td><?= $house['House']['traffic'] ;?></td>
+        <td style="width: 25%;">築年月</td>
+        <td style="width: 25%;"><?= $house['House']['year'] ;?></td>
+        <td style="width: 25%;">総階数</td>
+        <td style="width: 25%;"><?= $house['House']['floor'] ;?></td>
       </tr>
       <tr>
-        <td>構造</td>
-        <td><?= $house['House']['construction'] ;?></td>
+        <td style="width: 25%;">総戸数</td>
+        <td style="width: 25%;"><?= $house['House']['room'] ;?></td>
+        <td style="width: 25%;">家賃</td>
+        <td style="width: 25%;"><?= $house['House']['price'] ;?></td>
       </tr>
       <tr>
-        <td>築年月</td>
-        <td><?= $house['House']['year'] ;?></td>
+        <td style="width: 25%;">管理費</td>
+        <td style="width: 25%;"><?= $house['House']['manegedprice'] ;?></td>
+        <td style="width: 25%;">保険</td>
+        <td style="width: 25%;"><?= $house['House']['insurance'] ;?></td>
       </tr>
       <tr>
-        <td>総階数</td>
-        <td><?= $house['House']['floor'] ;?></td>
+        <td style="width: 25%;">保証会社</td>
+        <td style="width: 25%;"><?= $house['House']['company'] ;?></td>
+        <td style="width: 25%;">面積</td>
+        <td style="width: 25%;"><?= $house['House']['area'] ;?></td>
       </tr>
       <tr>
-        <td>総戸数</td>
-        <td><?= $house['House']['room'] ;?></td>
+        <td style="width: 25%;">間取り</td>
+        <td style="width: 25%;"><?= $house['House']['floorplan'] ;?></td>
+        <td style="width: 25%;">敷金</td>
+        <td style="width: 25%;"><?= $house['House']['deposit'] ;?></td>
       </tr>
       <tr>
-        <td>家賃</td>
-        <td><?= $house['House']['price'] ;?></td>
+        <td style="width: 25%;">礼金</td>
+        <td style="width: 25%;"><?= $house['House']['keymoney'] ;?></td>
+        <td style="width: 25%;">特徴</td>
+        <td style="width: 25%;"><?= $house['House']['features'] ;?></td>
       </tr>
       <tr>
-        <td>管理費</td>
-        <td><?= $house['House']['manegedprice'] ;?></td>
-      </tr>
-      <tr>
-        <td>保険</td>
-        <td><?= $house['House']['insurance'] ;?></td>
-      </tr>
-      <tr>
-        <td>保証会社</td>
-        <td><?= $house['House']['company'] ;?></td>
-      </tr>
-      <tr>
-        <td>面積</td>
-        <td><?= $house['House']['area'] ;?></td>
-      </tr>
-      <tr>
-        <td>間取り</td>
-        <td><?= $house['House']['floorplan'] ;?></td>
-      </tr>
-      <tr>
-        <td>敷金</td>
-        <td><?= $house['House']['deposit'] ;?></td>
-      </tr>
-      <tr>
-        <td>礼金</td>
-        <td><?= $house['House']['keymoney'] ;?></td>
-      </tr>
-      <tr>
-        <td>特徴</td>
-        <td><?= $house['House']['features'] ;?></td>
-      </tr>
-      <tr>
-        <td>設備</td>
-        <td><?= $house['House']['accommodation'] ;?></td>
-      </tr>
-      <tr>
-        <td>備考</td>
-        <td><?= $house['House']['note'] ;?></td>
+        <td style="width: 25%;">設備</td>
+        <td style="width: 25%;"><?= $house['House']['accommodation'] ;?></td>
+        <td style="width: 25%;">備考</td>
+        <td style="width: 25%;"><?= $house['House']['note'] ;?></td>
       </tr>
     </tbody>
   </table>

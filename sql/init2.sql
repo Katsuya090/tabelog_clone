@@ -42,8 +42,16 @@ ALTER TABLE `inquiries` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 INSERT INTO `inquiries` (`name`, `email`, `tel`, `kind`, `when`, `note`) VALUES ("ショップ0", "nase@yahh", "000-999-9999", "あああ", "aaa", "かかっか");
 
+create table `homes` (
+  `id` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `information` varchar(255) NOT NULL
 
+) ENGINE=InnoDB;
+ALTER TABLE `homes` ADD PRIMARY KEY (`id`);
+ALTER TABLE `homes` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
+INSERT INTO `homes` (`information`) VALUES ("◯◯マンションの物件情報が追加されました。");
 
 
 
